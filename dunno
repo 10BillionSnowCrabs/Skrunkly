@@ -1,0 +1,180 @@
+using System;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace _2_Cybulsk
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            Random liczba = new Random();
+            int zgaduj = liczba.Next(0, 100);
+            Console.WriteLine("Użytkowniku, twoim zadaniem jest spróbować zgadnąć liczbę między 0 a 100, masz 6 prób!");
+            int proby = 6;
+            int proba;
+
+
+            while (proby != 0)
+            {
+                proba = int.Parse(Console.ReadLine());
+                int jak = zgaduj - proba;
+                switch (jak)
+                {
+                    case 0:
+                        {
+                            Console.WriteLine("Wygrana"); proby = 1;
+                        }
+                        break;
+                    default:
+                        {
+                            if (jak > 0) { Console.WriteLine("twoja liczba jest za mała"); }else { Console.WriteLine("twoja liczba jest za duża"); }
+                        }
+                        break;
+                };
+                proby--;
+            }
+
+            /*
+             Zad 1?
+             -Oblicz deltę : b^2 - 4*a*c; (delta to zmienna pomocnicza, a zmienne 'a','b' oraz 'c' to dane wejściowe
+             -jeśli delta jest równa zero -> oblicz x0 = (-b)/(2*a) -> jeśli nie jest równa zero sprawdź czy delta jest większa od zero,  zmienna x0 to dana wyjściowa
+             -jeśli delta jest mniejsza od zera -> nie ma miejsc zerowych -> jeśli jest większa od zera oblicz x1 = (-b -PierwiastekDelta)/2a oraz x2 = (-b + PierwiastekDelta)/2a,   zmienne x1 i x2 to dane wyjściowe
+
+             Zad 2
+            Console.WriteLine("Podaj wartosci funkcji kwadratowej ax^2 + bx + c");
+            Double a, b, c;
+            a = Double.Parse(Console.ReadLine());
+            b = Double.Parse(Console.ReadLine());
+            c = Double.Parse(Console.ReadLine());
+            Double delta = b * b - (4 * a * c);
+            if(delta < 0)
+            {
+                Console.WriteLine("Ta funkcja kwadratowa nie ma miejsc zerowych");
+            }else if(delta == 0)
+            {
+                Double x0 = (-b) / 2 * a;
+                Console.WriteLine("Ta funkcja ma tylko jedna miejsce zerowe w punkcie " + x0);
+            }
+            else
+            {
+                double pierwDelta = Math.Sqrt(delta);
+                Double x1 = (-b - pierwDelta) / 2 * a;
+                Double x2 = (-b + pierwDelta) / 2 * a;
+                Console.Write("Ta funkcja kwadratowa ma miejsca zerowe w punktach: ");
+                Console.Write("{0:#.###}", x1);
+                Console.Write(" oraz ");
+                Console.Write("{0:#.###}", x2);
+            }
+
+
+
+            Zad 4
+            Int32 dzialanie;
+            Console.WriteLine("Podaj wartosci funkcji kwadratowej ax^2 + bx + c");
+            Double a, b, c;
+            a = Double.Parse(Console.ReadLine());
+            b = Double.Parse(Console.ReadLine());
+            c = Double.Parse(Console.ReadLine());
+
+            Double delta = b * b - (4 * a * c);
+            if (delta < 0)
+            {
+                dzialanie = 0;
+            }
+            else if (delta == 0)
+            {
+                dzialanie = 1;
+            }
+            else
+            {
+                dzialanie = 2;
+            }
+
+            switch (dzialanie)
+            {
+                case 0:
+                    {
+                        Console.WriteLine("Ta funkcja kwadratowa nie ma miejsc zerowych");
+                    }
+                    break;
+                case 1:
+                    {
+                        Double x0 = (-b) / 2 * a;
+                        Console.WriteLine("Ta funkcja ma tylko jedna miejsce zerowe w punkcie " + x0);
+                    }
+                    break;
+                default:
+                    {
+                        double pierwDelta = Math.Sqrt(delta);
+                        Double x1 = (-b - pierwDelta) / 2 * a;
+                        Double x2 = (-b + pierwDelta) / 2 * a;
+                        Console.Write("Ta funkcja kwadratowa ma miejsca zerowe w punktach: ");
+                        Console.Write("{0:#.###}", x1);
+                        Console.Write(" oraz ");
+                        Console.Write("{0:#.###}", x2);
+                    }
+                    break;
+            };
+
+
+            Zad 5
+            for (int x = 1; x <= 20; x++)
+            {
+
+                int y = 2 * x + 1;
+
+                Console.WriteLine("Dla x rownego " + x + " y jest rowne " + y);
+            }
+
+
+
+            Zad 6
+            int x = 1;
+        int y;
+        do { 
+            y = 2 * x + 1; 
+            Console.WriteLine("Dla x rownego " + x + " y jest rowne " + y);
+            x++;
+        }
+        while (x <= 20);
+
+
+
+            Zad 7
+            Tak, jeśli najpierw zwiększymy wartość zmiennej to obliczenia (w tym przypadku  y = 2*x+1) zostaną wykonane na wartości x która jest już zwiększona o 1, więc program wciąż może działać poprawnie tylko należy ustawić x = 0 a nie x = 1
+
+
+            Zad 8
+            int x = 1;
+            int y;
+
+
+            while (x <= 20)
+                {
+                    y = 2 * x + 1;
+                    Console.WriteLine("Dla x rownego " + x + " y jest rowne " + y);
+                    x++;
+                };
+
+            pętla WHILE najpierw sprawdza warunek i później wykonuje instrukcje, za to DO WHILE najpierw wykonuje instrukcje, przez co w DO WHILE nawet jeśli warunek nie jest spełniony od początku to instrukcja i tak zostanie wykonana 1 raz
+
+
+
+            Zad 9
+            Console.WriteLine("Witaj uzytkowniku, prosze wprowadz swoje imie");
+            string imie = Console.ReadLine();
+            Console.WriteLine("Proszę wprowadź ile razy chcesz by twoje imie zostało wypisane");
+            int ile = int.Parse(Console.ReadLine());
+
+            while (ile != 0)
+            {
+                Console.WriteLine(imie);
+                ile--;
+            };
+             */
+        }
+    }
+}
